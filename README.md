@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ComunicacionEntreComponente
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
@@ -57,3 +58,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Comunicaci-n-Entre-Componentes-Hermanos
+>>>>>>> 9224b86c37c02c10b95407ed913c1cef1d959e8f
