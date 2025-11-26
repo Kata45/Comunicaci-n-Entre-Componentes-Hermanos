@@ -1,0 +1,22 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+li.activo {
+  background: #0066ff;
+  color: white;
+  font-weight: bold;
+}
+
+.list-group-item.active {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+  font-weight: bold;
+}

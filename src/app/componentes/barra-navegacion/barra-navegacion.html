@@ -1,0 +1,27 @@
+<div class="container-fluid mt-3">
+
+  <div class="card shadow-sm">
+
+    <div class="card-body">
+
+      <h3 class="mb-3 text-primary">{{ titulo }}</h3>
+
+      <ul class="list-group">
+
+        <li class="list-group-item"
+            *ngFor="let item of opciones; let i = index"
+            (click)="navegar(item, i)"
+            [class.active]="seleccion === item"
+            style="cursor: pointer;">
+
+          {{ item }}
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,32 @@
+<div class="p-3">
+
+  <div class="text-center mb-4">
+    👥
+  </div>
+
+  <div class="d-flex flex-column gap-2">
+
+    <button
+      class="btn btn-outline-primary w-100"
+      [class.active]="botonSeleccionado === 1"
+      (click)="enviarDatos(1)">
+      Grupo 1
+    </button>
+
+    <button
+      class="btn btn-outline-primary w-100"
+      [class.active]="botonSeleccionado === 2"
+      (click)="enviarDatos(2)">
+      Grupo 2
+    </button>
+
+    <button
+      class="btn btn-outline-primary w-100"
+      [class.active]="botonSeleccionado === 3"
+      (click)="enviarDatos(3)">
+      Grupo 3
+    </button>
+
+  </div>
+
+</div>
