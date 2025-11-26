@@ -1,63 +1,156 @@
-<<<<<<< HEAD
-# ComunicacionEntreComponente
+![Angular Logo](https://external-preview.redd.it/qW5sXZSe_7w815bbdJh3mwhzBxyEdK13fFyRs3_8ZdQ.jpg?auto=webp&s=6611d9c403cb948d1caf33e595f129bd18d745e3)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+---
 
-## Development server
+<div align="center">
 
-To start a local development server, run:
+<h1>Proyecto Angular</h1>
 
-```bash
-ng serve
+> ## 👩🏻‍💻**Kata**
+> **Objetivo:** mostrar la comunicación entre **componentes hermanos** utilizando un **servicio compartido**, junto con un sistema de navegación dinámico a través del **Angular Router**.  
+
+</div>
+
+---
+
+<div align="center">
+<h1> Comunicación Entre Componentes Hermanos en Angular </h1>
+</div>
+
+Proyecto demostrativo – Angular Standalone + Bootstrap + Router
+
+La aplicación simula un menú lateral compuesto por:  
+- Una **barra de interacción** (Componente 1)  
+- Una **barra de navegación** (Componente 2)  
+- Varias páginas que se cargan dinámicamente dentro del `router-outlet`  
+
+Todo el proyecto está desarrollado con **Componentes Standalone**, recomendado en Angular moderno.
+
+---
+
+<div align="center">
+<h1> Tecnologías utilizadas </h1>
+</div>
+
+- **Angular 17+** con Standalone Components  
+- **TypeScript**
+- **Bootstrap 5**  
+- **RxJS (BehaviorSubject)**  
+- **HTML y CSS**
+
+---
+
+<div align="center">
+<h1> Objetivo del proyecto </h1>
+</div>
+
+El propósito principal es aprender y demostrar:
+
+- Cómo se comunican **componentes hermanos** usando un **servicio**  
+- Cómo cambiar una **barra de navegación** desde otra barra independiente  
+- Cómo cambiar contenido dinámico mediante **router-outlet**  
+- Cómo manejar selección activa en botones y listas  
+
+---
+
+<div align="center">
+<h1> Estructura de Componentes </h1>
+</div>
+
+```
+app.ts (P A D R E)
+│
+├── barra-interaccion (Hijo A)
+│ ├── Botones superiores
+│ ├── Envían datos al servicio
+│
+├── barra-navegacion (Hijo B)
+│ ├── Recibe datos del servicio
+│ ├── Muestra lista de navegación
+│ ├── Cambia rutas
+│
+└── router-outlet
+├── pagina-a
+├── pagina-b
+└── pagina-c
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+# Componente Padre
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## **`app.ts`**
+Este componente es el contenedor principal del sistema.  
+Dentro de él se ubican:
 
-```bash
-ng generate component component-name
+- La barra de interacción  
+- La barra de navegación  
+- El router-outlet donde se cargan las páginas  
+
+---
+
+# Componentes Hermanos (Hijos del Padre)
+
+## **`barra-interaccion` (Hijo A)**  
+Componente encargado de:
+
+- Mostrar botones verticales (Grupo 1, Grupo 2, Grupo 3)
+- Enviar al servicio:
+  - un **título**
+  - una **lista de opciones**
+- Cambiar dinámicamente el contenido del Componente 2
+
+**No tiene relación directa con la barra de navegación.**
+
+---
+
+## **`barra-navegacion` (Hijo B)**  
+Componente encargado de:
+
+- Escuchar datos enviados por el servicio (título y opciones)
+- Mostrar lista de navegación con estilo Bootstrap
+- Resaltar la opción seleccionada
+- Cambiar el contenido del `router-outlet`
+
+---
+
+# Comunicación entre Componentes Hermanos
+
+Este proyecto utiliza un **ComunicacionService**, con dos BehaviorSubject:
+
+# Flujo
+
+barra-interacción → (envía datos) → servicio → (emite datos) → barra-navegación
+
+# Navegación (Router)
+
+```
+/pagina-a
+/pagina-b
+/pagina-c
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+<div align="center">
+<h1> Contenido de las páginas </h1>
+</div>
 
-## Building
+Para este proyecto la temática simula una aplicación administrativa, por ello las páginas a, b y c expresan en su contenido herramientas para manejar la información.
+- Página A: Módulo Principal
+Información general, accesos rápidos, vista inicial.
+- Página B: Gestión de Usuarios
+Simula panel administrativo con funciones de CRUD.
+- Página C: Reportes y Estadísticas
+Simula gráficos, reportes e informes del sistema.
 
-To build the project run:
+---
+##### © **2025** Creado por *Kata* — Todos los derechos reservados.
+---
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-=======
-# Comunicaci-n-Entre-Componentes-Hermanos
->>>>>>> 9224b86c37c02c10b95407ed913c1cef1d959e8f
